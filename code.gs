@@ -47,8 +47,8 @@ function runSetup() {
           ['IN-0001',new Date(),'Seller','Jane',12,'garage pickup'],
         ]},
         {name:'Metrics', headers:['Date','Listings','Sales','GMV','AvgDaysToSell'], samples:[
-          [new Date(),10,3,250.00,9],
-        ]},
+        {name:'Sync', headers:['Action','Target','When','Status','Details'], 
+         samples: SITE_TARGETS.map(site => ['Push Featured', site, 'daily 2am', 'pending', 'first run'])},
         {name:'Sync', headers:['Action','Target','When','Status','Details'], samples: SITE_TARGETS.map(site => [
           'Push Featured', site, 'daily 2am', 'pending', 'first run'
         ])},
