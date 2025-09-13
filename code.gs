@@ -5,9 +5,12 @@
  */
 
 // ---------- CONFIG ----------
-const ROOT_FOLDER_NAME = 'RecoveredTreasuresTX';
+const ROOT_FOLDER_NAME = 'Web3WizardsHub';
 const EXPORTS_SUBFOLDER = 'Exports';
 const FEATURED_SUBFOLDER = 'FeaturedListings';
+
+// Sites that will consume exports/syncs
+const SITE_TARGETS = ['web3wizards.biz','freedomfleamarket.biz','recoveredtreasurestx.shop'];
 
 // Optional: if you want to hit AppSheet API later, drop key here and set ENABLE_APPSHEET_API = true
 const ENABLE_APPSHEET_API = true;
@@ -46,9 +49,9 @@ function runSetup() {
         {name:'Metrics', headers:['Date','Listings','Sales','GMV','AvgDaysToSell'], samples:[
           [new Date(),10,3,250.00,9],
         ]},
-        {name:'Sync', headers:['Action','Target','When','Status','Details'], samples:[
-          ['Push Featured','RecoveredTreasuresTX.shop','daily 2am','pending','first run'],
-        ]},
+        {name:'Sync', headers:['Action','Target','When','Status','Details'], samples: SITE_TARGETS.map(site => [
+          'Push Featured', site, 'daily 2am', 'pending', 'first run'
+        ])},
         {name:'Registry', headers:['Site','URL','SheetID','Notes'], samples:[]},
       ]
     ),
