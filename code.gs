@@ -9,8 +9,8 @@ const ROOT_FOLDER_NAME = 'Web3WizardsHub';
 const EXPORTS_SUBFOLDER = 'Exports';
 const FEATURED_SUBFOLDER = 'FeaturedListings';
 
-// Sites that will consume exports/syncs
-const SITE_TARGETS = ['web3wizards.biz','freedomfleamarket.biz','recoveredtreasurestx.shop'];
+const ENABLE_APPSHEET_API = true;
+const APPSHEET_API_KEY = process.env.APPSHEET_API_KEY || ''; // Load from environment variable
 
 // Optional: if you want to hit AppSheet API later, drop key here and set ENABLE_APPSHEET_API = true
 const ENABLE_APPSHEET_API = true;
