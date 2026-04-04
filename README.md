@@ -11,4 +11,3 @@ pre-populates the **Central Management** sheet with sync targets for:
 
 Run the `runSetup` function in the Apps Script editor to generate the
 resources and inject helper scripts into each spreadsheet.
-
